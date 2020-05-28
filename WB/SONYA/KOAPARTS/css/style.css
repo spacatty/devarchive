@@ -1,0 +1,510 @@
+* {
+    /* Сброс стандартных отступов */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+body {
+    font-family: Popins, sans-serif;
+    color: #ffffff;
+    background-color: #1C1C1C;
+    user-select: none;  /* запрещение выделения текста */
+}
+
+#home {
+    /* фон с картинкой  */
+    background-image: url(/assets/img/BG.jpg);
+    background-size: cover;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 15%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    z-index: 1;
+    /* Выбрасывание элемента вперед */
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    font-family: Poppins, sans-serif;
+}
+
+.menu {
+    display: flex;
+}
+
+.nav-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+/* слитное обращение к классам для указания того, что элемент,
+к которому применяются эти стили обязательно должен иметь оба класса
+(элементы навигации)
+*/
+
+.active.nav-item {
+    background: #FFF3;
+}
+
+.landingSection {
+    /* главный контейнер каждой страницы с высотой с вычтеной высотой навигационного бара */
+    height: 85%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arrow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainHeading {
+    font-size: 128px;
+}
+
+.middleContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchInputContainer {
+    color: black;
+    height: 60px;
+    border-radius: 70px;
+    font-size: 16px;
+    border: none;
+    position: relative;
+    /* Относительное позиционирование для псевдоэлемента */
+}
+
+.searchInputContainer::after {
+    /* Псевдоэлдемент (лупа) */
+    content: "";
+    position: absolute;
+    color: black;
+    top: 50%;
+    transform: translateY(-10px) scale(.8);
+    right: 6%;
+    height: 22px;
+    width: 22px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.699' height='22.699' viewBox='0 0 22.699 22.699'%3E%3Cg id='search' transform='translate(0 0)'%3E%3Cg id='Group_63' data-name='Group 63' transform='translate(0 0)'%3E%3Cpath id='Path_12' data-name='Path 12' d='M22.561,21.223l-6.594-6.594a9,9,0,1,0-1.337,1.337l6.594,6.594a.473.473,0,0,0,.669,0l.669-.669A.473.473,0,0,0,22.561,21.223ZM8.985,16.079a7.094,7.094,0,1,1,7.094-7.094A7.1,7.1,0,0,1,8.985,16.079Z' transform='translate(0 0)' fill='rgba(0,0,0,0.77)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.searchInput {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 70px;
+    /* Закруглить края */
+    border: none;
+    /* Убрать некрасивую рамку */
+}
+
+.newsCard {
+    background: #FFF;
+    display: flex;
+    height: 70%;
+    width: 70%;
+}
+
+.ncLeft {
+    width: 40%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    /* ПОВТОРЯТЬ по 1 единицы фракции для всей доступной высоты */
+}
+
+.ncRight {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(167, 167, 167);
+}
+
+.exampleNewsItem {
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px rgba(28, 28, 28, 0.178) solid;
+    /* Моя некрасивая рамка */
+    color: black;
+    display: flex;
+    text-align: center;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: .8em;
+    transition: .3s linear;
+    background-color: rgb(223, 223, 223);
+}
+
+.exampleNewsItem:hover {
+    /* Анимация наведения на элемент новостной ленты (слева) */
+    background-color: #5A5A5A;
+    color: white;
+}
+
+.activeNewsItem {
+    background-color: #5A5A5A;
+    color: white;
+}
+
+.exampleActiveNewsItemContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/img/news_bg.png);
+}
+
+.checkOfferButton {
+    margin: .5em .5em;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    color: black;
+    border-radius: 70px;
+    border: none;
+    font-size: 16px;
+    transition: .3s linear;
+}
+
+.checkOfferButton:hover {
+    background: rgba(106, 205, 86, 0.454);
+}
+
+.companyContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.companyFirstLeftSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.companyFirstRightSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.compRech {
+    margin-top: 10%;
+    width: 560px;
+    height: 270px;
+    background: #5a5a5a33;
+    font-weight: 100; /* Тоньше шрифт */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+}
+
+.companyHeadings {
+    font-size: 32px;
+}
+
+.companyBigHeadings {
+    font-size: 64px;
+}
+
+.companyCContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.topContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+}
+
+.botContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+}
+
+.userIcon {
+    margin-bottom: 5em;
+}
+
+.botArrow {
+    margin-top: 10em;
+}
+
+.dropDownSelectInput {
+    height: 60px;
+    width: 230px;
+    text-align: center;
+    color: black;
+    border-radius: 70px;
+    border: none;
+    font-size: 16px;
+}
+
+.catalogSearchInput {
+    height: 60px;
+    width: 440px;
+    text-align: center;
+    color: black;
+    border: none;
+    font-size: 16px;
+}
+
+.searchMenu {
+    padding-left: 2em;
+    padding-right: 2em;
+    min-height: 100px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.034);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.catalogContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+}
+
+.entriesAlertHeading {
+    color: #5A5A5A;
+    font-size: 32px;
+}
+
+.entriesFound {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.entry {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 267px;
+    width: 316px;
+    border: 3px #ffffff1b solid;
+    border-radius: 35px;
+    transition: 1s linear;
+}
+
+.entryContent {
+    border-radius: 35px;
+    /* Закругление краев */
+    font-size: 1em;
+    position: absolute;
+    /* Абсолютное позиционирование для дальнейшей возможности плавно и симметрично показать элемент */
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffffce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #000000;
+    cursor: pointer;
+    opacity: 0;
+    /* Изначальное состояние - сидеть тихо и не показываться */
+    transition: .3s linear;
+    /* Скорость плавности */
+}
+
+.entryContentPrice {
+    color: #1CB400;
+}
+
+.serviceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 100%;
+    width: 70%;
+}
+
+.serviceShape {
+    min-height: 650px;
+    min-width: 420px;
+    background: #FFF;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inactive {
+    margin-top: 10%;
+}
+
+.sIcon {
+    margin-top: 1em;
+}
+
+.sBenefits {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 2em;
+}
+
+.benefitsPar {
+    margin-top: 1em;
+}
+
+.sCardHeading {
+    margin: 2em 1em 1em 1em;
+    color: #5A5A5A;
+    font-size: 28px;
+}
+
+.sOrder {
+    margin: 1em;
+    cursor: pointer;
+}
+
+.lastContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.socialMedia {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    transform: scale(.8);
+}
+
+.smItem {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.smItem:hover {
+    transform: scale(1.1);
+    /* Увеличение иконки социальной сети при наведении */
+}
+
+.cartIcon {
+    /* Спрототипированная в ADOBE XD иконка в роли фона */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48.014' height='45' viewBox='0 0 48.014 45'%3E%3Cg id='cart' transform='translate(0.003 -0.379)'%3E%3Cpath id='Path_9' data-name='Path 9' d='M101.672,322.332a5.718,5.718,0,1,0,5.718,5.719A5.718,5.718,0,0,0,101.672,322.332Zm0,9.335a3.616,3.616,0,1,1,3.616-3.616A3.616,3.616,0,0,1,101.672,331.667Zm0,0' transform='translate(-85.87 -288.39)' fill='%23fff'/%3E%3Cpath id='Path_10' data-name='Path 10' d='M46.97,10.136H9.852L9.1,5.937A6.29,6.29,0,0,0,3.976.874L1.233.395A1.043,1.043,0,1,0,.865,2.447l2.754.479A4.186,4.186,0,0,1,7.025,6.3l3.721,20.8a5.232,5.232,0,0,0,5.172,4.3H37.992a5.237,5.237,0,0,0,5.035-3.7l4.941-16.231a1.081,1.081,0,0,0-.158-.927A1.068,1.068,0,0,0,46.97,10.136ZM41.02,27.1A3.128,3.128,0,0,1,38,29.314H15.928a3.13,3.13,0,0,1-3.1-2.584l-2.6-14.522h35.33Zm0,0' transform='translate(0)' fill='%23fff'/%3E%3Cpath id='Path_11' data-name='Path 11' d='M311.672,322.332a5.718,5.718,0,1,0,5.718,5.719A5.718,5.718,0,0,0,311.672,322.332Zm0,9.335a3.616,3.616,0,1,1,3.616-3.616A3.616,3.616,0,0,1,311.672,331.667Zm0,0' transform='translate(-273.795 -288.39)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: none;
+    background-size: 100%;
+    height: 45px;
+    width: 48px;
+    transform: scale(.7);
+    transition: .1s linear;
+    cursor: pointer;
+    /* Маскировка декоротивного элемента под ссылку */
+}
+
+.cartIcon:hover {
+    transform: scale(.8) rotate(10deg);
+    /* Поворот и масштабирование (анимация) корзины при наведении */
+}
+
+.feedBackIcon {
+    /* Спрототипированная в ADOBE XD иконка в роли фона */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36.118' height='39.402' viewBox='0 0 36.118 39.402'%3E%3Cg id='feather' transform='translate(-21.334)'%3E%3Cg id='Group_125' data-name='Group 125' transform='translate(21.334)'%3E%3Cpath id='Path_69' data-name='Path 69' d='M56.632,0a32.046,32.046,0,0,0-31.87,29.154,100.359,100.359,0,0,1,10.41-12A.821.821,0,1,1,36.344,18.3c-.639.65-1.287,1.325-1.939,2.008-.373.389-.737.777-1.1,1.157-.066.071-.131.141-.2.213-5.24,5.611-8.987,10.5-11.707,16.562a.822.822,0,0,0,1.5.673,45.057,45.057,0,0,1,3.357-6.111A31.99,31.99,0,0,0,53.635,15.986a.82.82,0,0,0-.724-1.21h-3.04l5.452-3.116a.822.822,0,0,0,.369-.445A31.9,31.9,0,0,0,57.452.821.821.821,0,0,0,56.632,0Z' transform='translate(-21.334 0)' fill='%23fff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: none;
+    background-size: 100%;
+    height: 45px;
+    width: 48px;
+    transform: scale(.7);
+    transition: .1s linear;
+    cursor: pointer;
+    /* Маскировка декоротивного элемента под ссылку */
+}
+
+.feedBackIcon:hover {
+    transform: scale(.8) rotate(-10deg);
+    /* Поворот и масштабирование (анимация) корзины при наведении */
+}
+
+.photoGallery {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(.7);
+    transition: .2s linear;
+}
+
+.photoGallery:hover {
+    transform: scale(.8);
+    cursor: pointer;
+}
+
+.mapLogo {
+    transition: .3s linear;
+     transform: scale(.7);
+     cursor: pointer;
+}
+
+.mapLogo:hover {
+    transform: scale(.9);
+}

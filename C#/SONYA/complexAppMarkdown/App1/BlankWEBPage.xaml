@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="App1.BlankWEBPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CommandBar VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Padding="0,0,0,10" HorizontalAlignment="Center">
+            <AppBarButton VerticalContentAlignment="Center" VerticalAlignment="Center" Icon="Undo"/>
+            <AppBarButton VerticalContentAlignment="Center" VerticalAlignment="Center" Icon="Refresh"/>
+            <AppBarButton VerticalContentAlignment="Center" VerticalAlignment="Center" Icon="Redo"/>
+            <AppBarElementContainer VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <TextBox BorderThickness="0" MinWidth="400" PlaceholderText="http://"/>
+            </AppBarElementContainer>
+            <AppBarButton VerticalContentAlignment="Center" VerticalAlignment="Center" Icon="OutlineStar"/>
+            <AppBarButton VerticalContentAlignment="Center" VerticalAlignment="Center" Icon="Setting"/>
+        </CommandBar>
+        <WebView Grid.Row="1"/>
+    </Grid>
+</Page>
