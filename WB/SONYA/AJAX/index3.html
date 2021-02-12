@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, World</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <table
+      cellspacing="1"
+      cellpadding="3"
+      id="contactListTable"
+      bgcolor="#9e9e9e"
+    >
+      <tbody>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone #</th>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><a href="index.html">Page 1</a></li>
+      <li><a href="index2.html">Page 2</a></li>
+      <li class="active"><a href="index3.html">Page 3</a></li>
+    </ul>
+  </body>
+</html>
+
+<script type="module">
+  import { loadContactListPage } from "./js/app.js";
+  loadContactListPage("3");
+</script>

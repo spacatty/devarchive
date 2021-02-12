@@ -1,0 +1,22 @@
+ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+li:nth-last-child(1) {
+  margin-left: 1em;
+}
+
+li:nth-last-child(2) {
+  margin-left: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active a {
+  text-decoration: underline;
+}
