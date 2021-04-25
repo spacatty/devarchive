@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="NavigationView.Views.TheoryItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NavigationView.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Сетевая модель OSI" Style="{StaticResource HeaderTextBlockStyle}" Margin="16"/>
+            <TextBlock Margin="32, 0, 32, 0" Text="Сетевая модель OSI (The Open Systems Interconnection model) — сетевая модель стека (магазина) сетевых протоколов OSI/ISO. Посредством данной модели различные сетевые устройства могут взаимодействовать друг с другом. Модель определяет различные уровни взаимодействия систем. Каждый уровень выполняет определённые функции при таком взаимодействии." Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Margin="32, 16, 32, 0" Text="Модель OSI была разработана в конце 1970-х годов для поддержания разнообразных методов компьютерных сетей, которые в это время конкурировали за применение в крупных национальных сетевых взаимодействиях во Франции, Великобритании и США. В 1980-х годах она стала рабочим продуктом группы взаимодействия открытых систем Международной организации по стандартизации (ISO). Модель не смогла дать полное описание сети и не получила поддержку архитекторов на заре Интернета, который впоследствии нашел отражение в менее предписывающем TCP/IP, в основном под руководством Инженерного совета Интернета (IETF)." Style="{StaticResource BodyTextBlockStyle}"/>
+            <Image Source="https://upload.wikimedia.org/wikipedia/commons/2/2b/Osi-model.png" Height="320" Width="Auto"/>
+            <CheckBox  Margin="32" IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsChecked="True" Content="Прочитано"/>
+        </StackPanel>
+    </Grid>
+</Page>

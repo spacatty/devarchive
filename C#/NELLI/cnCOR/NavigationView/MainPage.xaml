@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="NavigationView.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NavigationView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:Name="NavView" 
+                        ItemInvoked="NavigationView_OnItemInvoked"
+                        BackRequested="NavView_OnBackRequested"
+                        IsBackEnabled="{Binding ElementName=ContentFrame, Path=CanGoBack}" Loaded="NavView_Loaded">
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Теория" />
+                <NavigationViewItem Content="Доступные темы" Icon="Read" Tag="TheoryView"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Практика"/>
+                <NavigationViewItem Content="Доступные тесты" Icon="Accept" Tag="PracticeView"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Приложение"/>
+                <NavigationViewItem Content="Обратная связь" Icon="Help" Tag="FeedBackView"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Разработка"/>
+                <NavigationViewItem Content="Пример статьи" Icon="Folder" Tag="TheoryItemView"/>
+                <NavigationViewItem Content="Пример теста" Icon="Folder" Tag="PracticeItemView"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Page>

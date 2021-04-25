@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="NavigationView.Views.PracticeItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NavigationView.Views"
+    xmlns:custom="using:NavigationView.Views.Classes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <CheckBox Content="0/100"  Margin="32" IsEnabled="False" />
+            <GridView ItemsSource="{x:Bind OSIPractice.PracticeQuestions}" SelectionMode="None" Grid.Row="0">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="custom:Question">
+                        <Grid HorizontalAlignment="Left" MinWidth="1200" Margin="32">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{x:Bind Title}" Style="{StaticResource SubheaderTextBlockStyle}" Grid.Row="0"/>
+                            <GridView ItemsSource="{x:Bind QuestionVariants}" Grid.Row="1">
+                                <GridView.ItemTemplate>
+                                    <DataTemplate x:DataType="custom:Variant">
+                                        <Grid HorizontalAlignment="Left" MinWidth="600">
+                                            <RadioButton GroupName="{x:Bind QID}" Content="{x:Bind Text}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel HorizontalAlignment="Left" Margin="16"/>
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                            </GridView>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+            </GridView>
+        <Button Content="Завершить" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="32" IsEnabled="True" Grid.Row="1"/>
+    </Grid>
+</Page>
