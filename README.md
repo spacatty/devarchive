@@ -1,4 +1,4 @@
-# :sparkles: Development Archive
+<h1 align="center"> :sparkles: Development Archive </h1>
 This is an my development altruism archive. Perhaps nothing from here is useful for you but it was needed for someone mentionied in repo.
 Pretty much this is a dump or perhars a stockpile for academical pieces like:
   - Practices
